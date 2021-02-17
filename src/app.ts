@@ -1,5 +1,6 @@
 import { ceil, round } from 'lodash';
 import * as PIXI from 'pixi.js';
+import * as fs from 'fs';
 
 //Really simple 2d vector for simple storage of the values
 class Vec2d {
@@ -253,6 +254,15 @@ function CreateSnake(SnakeSize : number){
                             HScore = Score;
                             HighScore.text = "  High \n Score: \n    " + String(HScore);
                         }
+
+                        /*fs.writeFile('./Leaderboard.txt', '\n' + Score, (error) => { //No matter what I tried cant get fs to work.
+                            if (error) {
+                              console.log(error);
+                            } else {
+                              console.log('File created successfully');
+                            }
+                          });*/
+
                     }
 
                     if(LastFrameTilelist[0].x == AppleTile.x && LastFrameTilelist[0].y == AppleTile.y)
